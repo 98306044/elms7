@@ -1809,7 +1809,7 @@ function og_ungroup($group_type, $gid, $entity_type = 'user', $etid = NULL) {
  *   TRUE or FALSE if the current user has the requested permission. NULL, if
  *   the given group isn't a valid group.
  */
-function og_user_access($group_type, $gid, $string, $account = NULL, $skip_alter = FALSE, $ignore_admin = FALSE) {
+function og_user_access($group_type, $gid, $string = NULL, $account = NULL, $skip_alter = FALSE, $ignore_admin = FALSE) {
   global $user;
   $perm = &drupal_static(__FUNCTION__, array());
   // Mark the group ID and permissions that invoked an alter.
