@@ -1359,7 +1359,7 @@ function install_profile_modules(&$install_state) {
       $required[$module] = $files[$module]->sort;
     }
     else {
-      if (is_object($files[$module]) {
+      if (isset($files[$module]) && is_object($files[$module])) {
         $non_required[$module] = $files[$module]->sort; 
       }
       

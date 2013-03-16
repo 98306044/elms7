@@ -44,7 +44,10 @@ function elms_site_menu_alter(&$items) {
   //TODO: redirect to the correct location possibly or replicate if possible
 
   // add another way of getting to theme
-  $items['elms_site_admin/theme'] = $items['theme'];
+  if (is_array($items) && array_key_exists("themen", $items)) {
+    $items['elms_site_admin/theme'] = $items['theme'];  
+  }
+  
   //TODO: add callback to redirect to theme so its viewed in context
   // replicate the og_stats dashboard
   $items['elms_site_admin/stats'] = $items['node/%node/og_stats'];
